@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Подтверждение входа</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content>
+	<meta name="robots" content="noindex,nofollow,noarchive">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div>
+		<div class="modal-overlay" id="modal-overlay"></div>
+
+		<div class="modal" id="modal">
+			<div id="main" class="modal-guts">
+				<div class="box-captcha">
+					<div class="header">
+						<h1>ВВЕДИТЕ <span>КАПТЧУ</span></h1>
+						<div>
+							<p>Для получения доступа к сайту необходимо правильно ввести каптчу <input hidden id="target" class="text-target" disabled value="https://s1.loveshop1300.online/?"></p>
+						
+						</div>
+						<p>Внимание! Капча чувствительна к регистру!</p>
+					</div>
+					<div class="captcha">
+						<img src="image.php" alt="CAPTCHA" id="image-captcha">
+					</div>
+					<div class="box-generar">
+						<button id="refresh-captcha" class="button" title="refresh">Обновить</button>
+					</div>
+					<div class="box-entrada">
+						<input class="text-captcha" type="text" name="token" id="token" placeholder="Введите символы с картинки">
+					</div>
+					<div id="message" style="padding: 3px;"></div>
+					<div class="box-button">
+						<button class="button main-button anim" name="submit" onclick="verify()">Подтвердить</button>
+					</div>
+				</div>
+<div class="logo-block"><img class="support" src="images/b%C3%90%C2%B5-1.webp">
+					</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/captcha.js"></script>
+	<script src="https://www.google.com/recaptcha/enterprise.js?render=6LcU4HEgAAAAAPDklHlWOOroPT0VpLkmz8mWXLpN"></script>
+	<script>
+	grecaptcha.enterprise.ready(function() {
+		grecaptcha.enterprise.execute('6LcU4HEgAAAAAPDklHlWOOroPT0VpLkmz8mWXLpN', {action: 'login'}).then(function(token) {
+		   ...
+		});
+	});
+	</script>
+</body>
+
+</html>
